@@ -1,0 +1,21 @@
+[
+    {
+      "id": "facebook",
+      "url": "https://facebook.com",
+      "icon": "/hotel-images/facebook-svgrepo-com.svg",
+      "alt": "Facebook"
+    },
+    {
+      "id": "twitter",
+      "url": "https://twitter.com",
+      "icon": "/hotel-images/instagram-167-svgrepo-com (1).svg",
+      "alt": "Twitter"
+    },
+    {
+      "id": "instagram",
+      "url": "https://instagram.com",
+      "icon": "/hotel-images/twitter-svgrepo-com.svg",
+      "alt": "Instagram"
+    }
+  ]
+  

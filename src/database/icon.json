@@ -1,0 +1,223 @@
+import json
+import random
+from datetime import datetime, timedelta
+from itertools import product
+import uuid
+import argparse
+
+# Load hotel data
+with open("src/database/hotelListData.json", "r") as file:
+    hotels_data = json.load(file)
+
+
+# Generates random Date Range for a booking, using a fixed base date
+def generate_random_booking_dates(
+    base_date=None, min_check_in_days=1, max_check_in_days=30, max_stay_duration=7
+):
+    if not base_date:
+        random_year = random.randint(2020, 2030)
+        base_date = f"{random_year}-01-01"
+
+    try:
+        base_date = datetime.strptime(base_date, "%Y-%m-%d")
+    except ValueError:
+        raise ValueError("Invalid base_date format. Please provide date in 'YYYY-MM-DD' format.")
+
+    check_in_date = base_date + timedelta(days=random.randint(min_check_in_days, max_check_in_days))
+    stay_duration = random.randint(1, max_stay_duration)
+    check_out_date = check_in_date + timedelta(days=stay_duration)
+
+    # Format dates for different usages
+    human_readable_date = lambda date: date.strftime("%B %d, %Y")  # For prompts
+    result_format_date = lambda date: date.strftime("%d-%m-%Y")  # For booking results
+
+    return {
+        "prompt_date_format": human_readable_date(check_in_date),
+        "result_date_format": result_format_date(check_in_date),
+        "prompt_check_out_format": human_readable_date(check_out_date),
+        "result_check_out_format": result_format_date(check_out_date),
+    }
+
+
+# Format date to human-readable format
+def format_date_to_human_readable(date):
+    return date.strftime("%d %B %Y")
+
+
+# Generate random name
+def get_random_name():
+    first_names = [
+        "Sarah", "John", "Emily", "Michael", "Sophia", "Daniel", "Ava",
+        "James", "Emma", "Liam", "Olivia", "Noah", "Isabella", "Ethan",
+        "Mia", "Lucas", "Charlotte", "Mason", "Amelia", "Elijah", "Harper",
+    ]
+    last_names = [
+        "Smith", "Johnson", "Brown", "Taylor", "Anderson", "Thomas", "Jackson",
+        "White", "Harris", "Martin", "Clark", "Lewis", "Walker", "Hall", "Allen",
+        "Young", "King", "Wright", "Scott", "Adams",
+    ]
+
+    all_names = [f"{first} {last}" for first, last in product(first_names, last_names)]
+    return random.choice(all_names)
+
+
+# Generate random contact information
+def get_random_contact():
+    phone = f"{random.randint(1000000000, 9999999999)}"
+    email_providers = ["gmail.com", "yahoo.com", "outlook.com", "mail.com"]
+    email = f"user{random.randint(1000, 9999)}@{random.choice(email_providers)}"
+    return phone, email
+
+
+# Generate random guest count
+def get_random_guest():
+    return random.randint(2, 5)
+
+
+# Generate random room type
+def get_random_room_type():
+    room_types = [
+        "Economy", "Luxury", "Standard", "Deluxe", "Superior", "Premium", "Business",
+        "Family", "Studio", "Suite", "Junior Suite", "Penthouse", "Presidential Suite",
+        "Executive", "Bungalow", "Cabana", "Loft", "Villa", "Chalet", "Dormitory",
+        "Accessible", "Garden View", "Sea View", "Mountain View", "City View",
+    ]
+    return random.choice(room_types)
+
+
+def find_matching_hotel(hotels_data, room_type, guests):
+    # Find matching hotels
+    matching_hotels = [
+        hotel for hotel in hotels_data
+        if hotel["roomType"] == room_type and hotel["roomSeats"] == guests
+    ]
+
+    if matching_hotels:
+        selected_hotel = random.choice(matching_hotels)  # Randomly select a matching hotel
+        return {
+            "roomType": room_type,
+            "guest_count": guests,
+            "hotel": selected_hotel,
+        }
+    else:
+        return {
+            "roomType": room_type,
+            "guest_count": guests,
+            "hotel": None,
+        }
+
+
+# Generate prompts with results
+def create_prompts_with_results(num_prompts, output_file):
+    output_list = []
+
+    prompt_templates =  [
+        "I want to book a room at {hotel_name}, located at {hotel_address}, in {city}. The {room_type} is for {guests} people from {check_in_date} to {check_out_date}. My name is {name}, and you can contact me at {phone} or {email}.",
+        "Can you help me with booking a room at {hotel_name} in {city}? It's a {room_type} at {hotel_address} for {guests} people from {check_in_date} to {check_out_date}. My contact details are {name}, {phone}, and {email}.",
+        "Please assist me in booking a {room_type} room at {hotel_name}, located at {hotel_address}, in {city}, for {guests} people from {check_in_date} to {check_out_date}. My name is {name}, and I can be reached at {phone} or {email}.",
+        "Can you confirm and book a room for {guests} people at {hotel_name}? It's a {room_type} at {hotel_address}, located in {city}, for the dates {check_in_date} to {check_out_date}. Contact me at {name}, {phone}, or {email}.",
+        "I would like to reserve a room at {hotel_name}, which is in {city} at {hotel_address}. The {room_type} is for {guests} people from {check_in_date} to {check_out_date}. My name is {name}, and you can reach me at {phone} or {email}.",
+        "What's the total price for a {room_type} room at {hotel_name}, located at {hotel_address}, in {city}? It's for {guests} people from {check_in_date} to {check_out_date}. My contact information: {name}, {phone}, {email}.",
+        "Can you provide the best price for a room at {hotel_name} in {city}? The {room_type}, located at {hotel_address}, is for {guests} people from {check_in_date} to {check_out_date}. My details are {name}, {phone}, {email}.",
+        "I need to finalize a booking for a {room_type} room at {hotel_name}. It's located at {hotel_address}, in {city}, and is for {guests} people from {check_in_date} to {check_out_date}. You can contact me at {name}, {phone}, or {email}.",
+        "I'm planning a trip to {city} and need a room. Please book a {room_type} at {hotel_name}, located at {hotel_address}, for {guests} people from {check_in_date} to {check_out_date}. My contact details are {name}, {phone}, {email}.",
+        "Can you help me find available options? I need to book a {room_type} room at {hotel_name}, at {hotel_address}, in {city}, for {guests} people. The dates are {check_in_date} to {check_out_date}. My name is {name}, and my contact is {phone} or {email}.",
+        "Help me reserve a {room_type} room at {hotel_name}, located at {hotel_address}, in {city}, for {guests} people from {check_in_date} to {check_out_date}. My details: {name}, {phone}, {email}.",
+        "Could you assist me in booking a {room_type} room at {hotel_name}? It's at {hotel_address}, in {city}, for {guests} people, from {check_in_date} to {check_out_date}. Contact: {name}, {phone}, {email}.",
+        "I want to confirm a booking for a {room_type} room at {hotel_name} in {city}, at {hotel_address}. It's for {guests} people from {check_in_date} to {check_out_date}. My contact details are {name}, {phone}, {email}.",
+        "Please confirm the availability of a {room_type} room at {hotel_name}, located at {hotel_address}, in {city}, for {guests} people from {check_in_date} to {check_out_date}. My name is {name}, and I can be reached at {phone} or {email}.",
+        "Can you confirm and assist with a booking for a room at {hotel_name} in {city}? It's a {room_type} room at {hotel_address}, for {guests} people, from {check_in_date} to {check_out_date}. Contact: {name}, {phone}, {email}.",
+        "I'd like to reserve a {room_type} room at {hotel_name}, located at {hotel_address}, in {city}, for {guests} people, from {check_in_date} to {check_out_date}. My details: {name}, {phone}, {email}.",
+        "Please check the availability and confirm a {room_type} room booking at {hotel_name}, in {city}, at {hotel_address}, for {guests} people between {check_in_date} and {check_out_date}. My contact is {name}, {phone}, {email}.",
+        "I'm looking for a {room_type} room at {hotel_name}, located at {hotel_address}, in {city}, for {guests} people. The dates are {check_in_date} to {check_out_date}. My contact details: {name}, {phone}, {email}.",
+        "Book a {room_type} room at {hotel_name}, in {city}, at {hotel_address}. It's for {guests} people, with check-in on {check_in_date} and check-out on {check_out_date}. My name is {name}, and my contact is {phone} or {email}.",
+        "Can you confirm the availability of a {room_type} room at {hotel_name}? It's at {hotel_address}, in {city}, for {guests} people, with check-in on {check_in_date} and check-out on {check_out_date}. My details: {name}, {phone}, {email}."
+    ]
+
+    for _ in range(num_prompts):
+        dates = generate_random_booking_dates()
+        room_type = get_random_room_type()
+        guests = get_random_guest()
+        name = get_random_name()
+        phone, email = get_random_contact()
+
+        check_in_date_result = dates["result_date_format"]
+        check_out_date_result = dates["result_check_out_format"]
+
+        # Find a matching hotel
+        hotel = find_matching_hotel(hotels_data, room_type, guests)
+        if hotel["hotel"]:  # Ensure a matching hotel is found
+            selected_hotel = hotel["hotel"]
+
+            # Generate the prompt
+            template = random.choice(prompt_templates)
+            prompt = template.format(
+                city=selected_hotel["place"],
+                hotel_name=selected_hotel["name"],
+                hotel_address=selected_hotel["address"],
+                room_type=room_type,
+                guests=guests,
+                check_in_date=dates["prompt_date_format"],
+                check_out_date=dates["prompt_check_out_format"],
+                name=name,
+                phone=phone,
+                email=email,
+            )
+
+            # Append to output list
+            output_list.append({
+                "prompt": prompt,  # Include the generated prompt
+                "bookingDetails": {
+                    "booking_id": str(uuid.uuid4()),
+                    "check_in_date": check_in_date_result,
+                    "check_out_date": check_out_date_result,
+                    "guest": guests,
+                    "hotel": {
+                        "id": selected_hotel["id"],
+                        "name": selected_hotel["name"],
+                        "address": selected_hotel["address"],
+                        "roomType": selected_hotel["room_type"],
+                        "price": selected_hotel["price"],
+                        "offer": selected_hotel["offer"],
+                        "discount": selected_hotel["discount"],
+                        "serviceFee": service_fee,
+                    },
+                    "userDetails" : {
+                      "name": name,
+                      "email": email,
+                      "phone": phone,
+                  }
+                },
+            })
+        # else:
+            # print("No matching  found for the given criteria.")
+
+    # Save prompts and booking results to the specified output file
+    with open(output_file, "w", encoding="utf-8") as file:
+        json.dump(output_list, file, indent=4)
+
+    print(f"Generated prompts and saved to {output_file}.")
+    return output_list
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Generate booking prompts and results."
+    )
+    parser.add_argument(
+        "-n",
+        "--num_prompts",
+        type=int,
+        default=20,
+        help="Number of Hotel Booking prompts to generate (default: 20).",
+    )
+    parser.add_argument(
+        "-o",
+        "--output",
+        type=str,
+        default="generated_hotel_booking_prompts.json",
+        help="Output file to save the prompts and results (default: 'generated_hotel_booking_prompts.json').",
+    )
+
+    args = parser.parse_args()
+    create_prompts_with_results(args.num_prompts, args.output)

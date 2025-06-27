@@ -1,0 +1,582 @@
+[
+    {
+        "prompt": "I am visiting Bronx, and I want to book a hotel room of Standard. It is at Hilton Garden Inn. My check-in date is from January 31, 2021, and the check-out will be at February 03, 2021. The hotel is at Bronx, 101 Grand Concourse, Bronx, NY 10451. My contact information is Harper Wright, 4837165307, and user5083@outlook.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-21-d574b1915545",
+            "check_in_date": "31-01-2021",
+            "check_out_date": "03-02-2021",
+            "guest": 4,
+            "roomType": "Standard",
+            "hotel": {
+                "id": 21,
+                "name": "Hilton Garden Inn",
+                "address": "101 Grand Concourse, Bronx, NY 10451",
+                "price": 2141,
+                "offer": "Breakfast Included",
+                "discount": 20,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "2141",
+            "discount": "20",
+            "priceAfterDiscount": "2121"
+        },
+        "userDetails": {
+            "name": "Harper Wright",
+            "email": "user5083@outlook.com",
+            "phone": "4837165307"
+        }
+    },
+    {
+        "prompt": "I'm planning to book Four Seasons Hotel, which is located at 123 Broadway, New York, NY 10007, Manhattan, and I want a Penthouse for my 3. They are checking in from January 19, 2025 to January 23, 2025. My contact details are Mason Clark, 6251145959, user6515@gmail.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-177-d574b1915545",
+            "check_in_date": "19-01-2025",
+            "check_out_date": "23-01-2025",
+            "guest": 3,
+            "roomType": "Penthouse",
+            "hotel": {
+                "id": 177,
+                "name": "Four Seasons Hotel",
+                "address": "123 Broadway, New York, NY 10007",
+                "price": 1799,
+                "offer": "Breakfast Included",
+                "discount": 19,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "1799",
+            "discount": "19",
+            "priceAfterDiscount": "1780"
+        },
+        "userDetails": {
+            "name": "Mason Clark",
+            "email": "user6515@gmail.com",
+            "phone": "6251145959"
+        }
+    },
+    {
+        "prompt": "I want to book a Presidential Suite at Marriott Downtown. The address is 101 Grand Concourse, Bronx, NY 10451, Bronx, for 2 guests. I will provide you the dates January 25, 2028 to January 30, 2028. My contact information: Olivia Harris, 2389056901 / user4061@mail.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-122-d574b1915545",
+            "check_in_date": "25-01-2028",
+            "check_out_date": "30-01-2028",
+            "guest": 2,
+            "roomType": "Presidential Suite",
+            "hotel": {
+                "id": 122,
+                "name": "Marriott Downtown",
+                "address": "101 Grand Concourse, Bronx, NY 10451",
+                "price": 1241,
+                "offer": "Breakfast Included",
+                "discount": 7,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "1241",
+            "discount": "7",
+            "priceAfterDiscount": "1234"
+        },
+        "userDetails": {
+            "name": "Olivia Harris",
+            "email": "user4061@mail.com",
+            "phone": "2389056901"
+        }
+    },
+    {
+        "prompt": "I would love to book a room at 456 Atlantic Ave, Brooklyn, NY 11217. Its name is The Ritz-Carlton in Brooklyn. The condition of the room is Executive for 4. We will be checking in from January 24, 2030 to January 28, 2030. My contact information is John White, 3032597032, or user2387@yahoo.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-84-d574b1915545",
+            "check_in_date": "24-01-2030",
+            "check_out_date": "28-01-2030",
+            "guest": 4,
+            "roomType": "Executive",
+            "hotel": {
+                "id": 84,
+                "name": "The Ritz-Carlton",
+                "address": "456 Atlantic Ave, Brooklyn, NY 11217",
+                "price": 1472,
+                "offer": "Breakfast Included",
+                "discount": 20,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "1472",
+            "discount": "20",
+            "priceAfterDiscount": "1452"
+        },
+        "userDetails": {
+            "name": "John White",
+            "email": "user2387@yahoo.com",
+            "phone": "3032597032"
+        }
+    },
+    {
+        "prompt": "Please book me a Bungalow. The name of the hotel is Sheraton Grand for my 3. The address of the hotel is 505 Spring St, New York, NY 10013, SoHo. The check-in will be from January 12, 2029 to January 15, 2029. You can contact me. My name is Olivia Johnson, and my phone number is 9507086814, or user4184@mail.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-85-d574b1915545",
+            "check_in_date": "12-01-2029",
+            "check_out_date": "15-01-2029",
+            "guest": 3,
+            "roomType": "Bungalow",
+            "hotel": {
+                "id": 85,
+                "name": "Sheraton Grand",
+                "address": "505 Spring St, New York, NY 10013",
+                "price": 1764,
+                "offer": "Breakfast Included",
+                "discount": 17,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "1764",
+            "discount": "17",
+            "priceAfterDiscount": "1747"
+        },
+        "userDetails": {
+            "name": "Olivia Johnson",
+            "email": "user4184@mail.com",
+            "phone": "9507086814"
+        }
+    },
+    {
+        "prompt": "I'm planning to book Four Seasons Hotel, which is located at 404 8th Ave, New York, NY 10001, Chelsea, and I want a Dormitory for my 2. They are checking in from January 31, 2026 to February 04, 2026. My contact details are Daniel Adams, 2537522690, user5557@outlook.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-67-d574b1915545",
+            "check_in_date": "31-01-2026",
+            "check_out_date": "04-02-2026",
+            "guest": 2,
+            "roomType": "Dormitory",
+            "hotel": {
+                "id": 67,
+                "name": "Four Seasons Hotel",
+                "address": "404 8th Ave, New York, NY 10001",
+                "price": 1419,
+                "offer": "Breakfast Included",
+                "discount": 17,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "1419",
+            "discount": "17",
+            "priceAfterDiscount": "1402"
+        },
+        "userDetails": {
+            "name": "Daniel Adams",
+            "email": "user5557@outlook.com",
+            "phone": "2537522690"
+        }
+    },
+    {
+        "prompt": "I am visiting Chelsea, and I want a Villa at Four Seasons Hotel. The address of the hotel is 404 8th Ave, New York, NY 10001. There are 2 with me. My check-in date will be January 24, 2026, and my check-out will be on January 25, 2026. My information is Harper Young, 5026866071, and user9913@gmail.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-97-d574b1915545",
+            "check_in_date": "24-01-2026",
+            "check_out_date": "25-01-2026",
+            "guest": 2,
+            "roomType": "Villa",
+            "hotel": {
+                "id": 97,
+                "name": "Four Seasons Hotel",
+                "address": "404 8th Ave, New York, NY 10001",
+                "price": 2102,
+                "offer": "Breakfast Included",
+                "discount": 9,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "2102",
+            "discount": "9",
+            "priceAfterDiscount": "2093"
+        },
+        "userDetails": {
+            "name": "Harper Young",
+            "email": "user9913@gmail.com",
+            "phone": "5026866071"
+        }
+    },
+    {
+        "prompt": "I'm planning to book The Ritz-Carlton, which is located at 123 Broadway, New York, NY 10007, Manhattan, and I want a Presidential Suite for my 5. They are checking in from January 12, 2025 to January 19, 2025. My contact details are Olivia White, 5170459249, user5047@gmail.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-134-d574b1915545",
+            "check_in_date": "12-01-2025",
+            "check_out_date": "19-01-2025",
+            "guest": 5,
+            "roomType": "Presidential Suite",
+            "hotel": {
+                "id": 134,
+                "name": "The Ritz-Carlton",
+                "address": "123 Broadway, New York, NY 10007",
+                "price": 1101,
+                "offer": "Breakfast Included",
+                "discount": 18,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "1101",
+            "discount": "18",
+            "priceAfterDiscount": "1083"
+        },
+        "userDetails": {
+            "name": "Olivia White",
+            "email": "user5047@gmail.com",
+            "phone": "5170459249"
+        }
+    },
+    {
+        "prompt": "I am planning to stay in The Peninsula. It is in Manhattan, 123 Broadway, New York, NY 10007, and I will prefer a Economy. This stay is for 2 people. Their check-in dates are January 26, 2023 to January 31, 2023. My information is Daniel Johnson, 1396688868, user4415@mail.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-38-d574b1915545",
+            "check_in_date": "26-01-2023",
+            "check_out_date": "31-01-2023",
+            "guest": 2,
+            "roomType": "Economy",
+            "hotel": {
+                "id": 38,
+                "name": "The Peninsula",
+                "address": "123 Broadway, New York, NY 10007",
+                "price": 1334,
+                "offer": "Breakfast Included",
+                "discount": 11,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "1334",
+            "discount": "11",
+            "priceAfterDiscount": "1323"
+        },
+        "userDetails": {
+            "name": "Daniel Johnson",
+            "email": "user4415@mail.com",
+            "phone": "1396688868"
+        }
+    },
+    {
+        "prompt": "I need a Luxury. The name of the hotel is Hilton Garden Inn, and it is in Manhattan, 123 Broadway, New York, NY 10007. I am booking it for 5 guests, and they are staying from January 05, 2030 to January 07, 2030. My contact information is John Brown, 8756091455, and user8604@mail.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-41-d574b1915545",
+            "check_in_date": "05-01-2030",
+            "check_out_date": "07-01-2030",
+            "guest": 5,
+            "roomType": "Luxury",
+            "hotel": {
+                "id": 41,
+                "name": "Hilton Garden Inn",
+                "address": "123 Broadway, New York, NY 10007",
+                "price": 1988,
+                "offer": "Breakfast Included",
+                "discount": 20,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "1988",
+            "discount": "20",
+            "priceAfterDiscount": "1968"
+        },
+        "userDetails": {
+            "name": "John Brown",
+            "email": "user8604@mail.com",
+            "phone": "8756091455"
+        }
+    },
+    {
+        "prompt": "I need to book a Presidential Suite in The Ritz-Carlton. The address of the hotel is 789 Queens Blvd, Queens, NY 11373, in Queens. The dates are January 25, 2023 to January 27, 2023 for 2 guests. My details include James Young, 4789508986, user3144@gmail.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-144-d574b1915545",
+            "check_in_date": "25-01-2023",
+            "check_out_date": "27-01-2023",
+            "guest": 2,
+            "roomType": "Presidential Suite",
+            "hotel": {
+                "id": 144,
+                "name": "The Ritz-Carlton",
+                "address": "789 Queens Blvd, Queens, NY 11373",
+                "price": 1330,
+                "offer": "Breakfast Included",
+                "discount": 20,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "1330",
+            "discount": "20",
+            "priceAfterDiscount": "1310"
+        },
+        "userDetails": {
+            "name": "James Young",
+            "email": "user3144@gmail.com",
+            "phone": "4789508986"
+        }
+    },
+    {
+        "prompt": "I am looking to reserve a Presidential Suite at Radisson Blu. It is located at 789 Queens Blvd, Queens, NY 11373, Queens, for my 4 people. My staying dates are January 11, 2028 to January 18, 2028. You can contact me. My information is Isabella Adams, 9037551891, and user6311@gmail.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-179-d574b1915545",
+            "check_in_date": "11-01-2028",
+            "check_out_date": "18-01-2028",
+            "guest": 4,
+            "roomType": "Presidential Suite",
+            "hotel": {
+                "id": 179,
+                "name": "Radisson Blu",
+                "address": "789 Queens Blvd, Queens, NY 11373",
+                "price": 836,
+                "offer": "Breakfast Included",
+                "discount": 8,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "836",
+            "discount": "8",
+            "priceAfterDiscount": "828"
+        },
+        "userDetails": {
+            "name": "Isabella Adams",
+            "email": "user6311@gmail.com",
+            "phone": "9037551891"
+        }
+    },
+    {
+        "prompt": "I need a room at Hilton Garden Inn. I will prefer a Luxury. The location will be Manhattan, and the address of the hotel is 123 Broadway, New York, NY 10007. I will be checking in from January 12, 2024 to January 16, 2024. It is for 5 people. My contact information is Sarah Harris, 3229077623, and user4382@gmail.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-41-d574b1915545",
+            "check_in_date": "12-01-2024",
+            "check_out_date": "16-01-2024",
+            "guest": 5,
+            "roomType": "Luxury",
+            "hotel": {
+                "id": 41,
+                "name": "Hilton Garden Inn",
+                "address": "123 Broadway, New York, NY 10007",
+                "price": 1988,
+                "offer": "Breakfast Included",
+                "discount": 20,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "1988",
+            "discount": "20",
+            "priceAfterDiscount": "1968"
+        },
+        "userDetails": {
+            "name": "Sarah Harris",
+            "email": "user4382@gmail.com",
+            "phone": "3229077623"
+        }
+    },
+    {
+        "prompt": "I am planning to stay in Holiday Inn Express. It is in Chelsea, 404 8th Ave, New York, NY 10001, and I will prefer a Dormitory. This stay is for 3 people. Their check-in dates are January 05, 2030 to January 07, 2030. My information is Liam Johnson, 9778028960, user6793@gmail.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-186-d574b1915545",
+            "check_in_date": "05-01-2030",
+            "check_out_date": "07-01-2030",
+            "guest": 3,
+            "roomType": "Dormitory",
+            "hotel": {
+                "id": 186,
+                "name": "Holiday Inn Express",
+                "address": "404 8th Ave, New York, NY 10001",
+                "price": 2426,
+                "offer": "Breakfast Included",
+                "discount": 14,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "2426",
+            "discount": "14",
+            "priceAfterDiscount": "2412"
+        },
+        "userDetails": {
+            "name": "Liam Johnson",
+            "email": "user6793@gmail.com",
+            "phone": "9778028960"
+        }
+    },
+    {
+        "prompt": "I am looking to reserve a City View at Hilton Garden Inn. It is located at 202 Richmond Ave, Staten Island, NY 10314, Staten Island, for my 5 people. My staying dates are January 02, 2024 to January 07, 2024. You can contact me. My information is Ethan Wright, 2536024829, and user3878@outlook.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-61-d574b1915545",
+            "check_in_date": "02-01-2024",
+            "check_out_date": "07-01-2024",
+            "guest": 5,
+            "roomType": "City View",
+            "hotel": {
+                "id": 61,
+                "name": "Hilton Garden Inn",
+                "address": "202 Richmond Ave, Staten Island, NY 10314",
+                "price": 2034,
+                "offer": "Breakfast Included",
+                "discount": 15,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "2034",
+            "discount": "15",
+            "priceAfterDiscount": "2019"
+        },
+        "userDetails": {
+            "name": "Ethan Wright",
+            "email": "user3878@outlook.com",
+            "phone": "2536024829"
+        }
+    },
+    {
+        "prompt": "I want to book a Loft at Four Seasons Hotel. The address is 202 Richmond Ave, Staten Island, NY 10314, Staten Island, for 4 guests. I will provide you the dates January 31, 2028 to February 02, 2028. My contact information: Lucas Martin, 5344371837 / user1946@mail.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-47-d574b1915545",
+            "check_in_date": "31-01-2028",
+            "check_out_date": "02-02-2028",
+            "guest": 4,
+            "roomType": "Loft",
+            "hotel": {
+                "id": 47,
+                "name": "Four Seasons Hotel",
+                "address": "202 Richmond Ave, Staten Island, NY 10314",
+                "price": 1780,
+                "offer": "Breakfast Included",
+                "discount": 7,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "1780",
+            "discount": "7",
+            "priceAfterDiscount": "1773"
+        },
+        "userDetails": {
+            "name": "Lucas Martin",
+            "email": "user1946@mail.com",
+            "phone": "5344371837"
+        }
+    },
+    {
+        "prompt": "I would like to book a Superior at Holiday Inn Express. This hotel is in SoHo, and its address is 505 Spring St, New York, NY 10013. I will be staying from January 08, 2026 to January 14, 2026. There are 5 people. You can contact me. My name is Emma Jackson, and my phone number is 4290763702, user6282@mail.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-86-d574b1915545",
+            "check_in_date": "08-01-2026",
+            "check_out_date": "14-01-2026",
+            "guest": 5,
+            "roomType": "Superior",
+            "hotel": {
+                "id": 86,
+                "name": "Holiday Inn Express",
+                "address": "505 Spring St, New York, NY 10013",
+                "price": 1846,
+                "offer": "Breakfast Included",
+                "discount": 16,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "1846",
+            "discount": "16",
+            "priceAfterDiscount": "1830"
+        },
+        "userDetails": {
+            "name": "Emma Jackson",
+            "email": "user6282@mail.com",
+            "phone": "4290763702"
+        }
+    },
+    {
+        "prompt": "I would like to book a room at Holiday Inn Express. I need this type of room: Deluxe. The check-in dates are from January 18, 2028 to January 23, 2028 for 4 guests. The location of the hotel is Queens, 789 Queens Blvd, Queens, NY 11373. My information is Liam Clark, 9554805051, and user1977@outlook.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-76-d574b1915545",
+            "check_in_date": "18-01-2028",
+            "check_out_date": "23-01-2028",
+            "guest": 4,
+            "roomType": "Deluxe",
+            "hotel": {
+                "id": 76,
+                "name": "Holiday Inn Express",
+                "address": "789 Queens Blvd, Queens, NY 11373",
+                "price": 2490,
+                "offer": "Breakfast Included",
+                "discount": 8,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "2490",
+            "discount": "8",
+            "priceAfterDiscount": "2482"
+        },
+        "userDetails": {
+            "name": "Liam Clark",
+            "email": "user1977@outlook.com",
+            "phone": "9554805051"
+        }
+    },
+    {
+        "prompt": "I am planning to travel to SoHo and I want to book Marriott Downtown. I will consider this Junior Suite for 4 people. The address of the hotel is 505 Spring St, New York, NY 10013 from January 10, 2020 to January 12, 2020. My contact information is John Lewis, 6810886873, user7431@yahoo.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-62-d574b1915545",
+            "check_in_date": "10-01-2020",
+            "check_out_date": "12-01-2020",
+            "guest": 4,
+            "roomType": "Junior Suite",
+            "hotel": {
+                "id": 62,
+                "name": "Marriott Downtown",
+                "address": "505 Spring St, New York, NY 10013",
+                "price": 1519,
+                "offer": "Breakfast Included",
+                "discount": 6,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "1519",
+            "discount": "6",
+            "priceAfterDiscount": "1513"
+        },
+        "userDetails": {
+            "name": "John Lewis",
+            "email": "user7431@yahoo.com",
+            "phone": "6810886873"
+        }
+    },
+    {
+        "prompt": "I would like to reserve a hotel room of a Accessible at Hyatt Regency. Its address is 303 Malcolm X Blvd, New York, NY 10027, Harlem, and there are 3 people. The date will be January 18, 2020 to January 24, 2020. My contact information is Emily Jackson, 7705106206, and user6781@outlook.com.",
+        "bookingDetails": {
+            "booking_id": "ee34476d-a194-42f7-123-d574b1915545",
+            "check_in_date": "18-01-2020",
+            "check_out_date": "24-01-2020",
+            "guest": 3,
+            "roomType": "Accessible",
+            "hotel": {
+                "id": 123,
+                "name": "Hyatt Regency",
+                "address": "303 Malcolm X Blvd, New York, NY 10027",
+                "price": 2439,
+                "offer": "Breakfast Included",
+                "discount": 11,
+                "serviceFee": 220
+            }
+        },
+        "paymentDetails": {
+            "price": "2439",
+            "discount": "11",
+            "priceAfterDiscount": "2428"
+        },
+        "userDetails": {
+            "name": "Emily Jackson",
+            "email": "user6781@outlook.com",
+            "phone": "7705106206"
+        }
+    }
+]

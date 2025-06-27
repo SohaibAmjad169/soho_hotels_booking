@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Home",
+        "url": "/"
+    },
+    {
+        "name": "Accommodation",
+        "url": "#"
+    },
+    {
+        "name": "Blog",
+        "url": "#"
+    },
+    {
+        "name": "Gallery",
+        "url": "#"
+    },
+    {
+        "name": "Contact Us",
+        "url": "#"
+    }
+]

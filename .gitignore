@@ -1,0 +1,20 @@
+# Node modules
+**/node_modules/
+
+# Next.js build
+.next/
+out/
+
+# Logs
+*.log
+
+# Build artifacts
+dist/
+build/
+
+# OS and editor-specific files
+.DS_Store
+*.swp
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat

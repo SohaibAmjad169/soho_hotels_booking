@@ -1,0 +1,12 @@
+[
+    {
+        "id": "phone",
+        "icon": "/hotel-images/phone-flip-alt-svgrepo-com.svg",
+        "text":"+923221223232 "
+    },
+    {
+        "id": "location",
+        "icon": "/hotel-images/location-pin-alt-1-svgrepo-com.svg",
+        "text":"New York, USA"
+    }
+]
