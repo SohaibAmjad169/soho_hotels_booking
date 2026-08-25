@@ -36,7 +36,8 @@ const Footer = () => {
                             {iconList.map((item, index) => (
                                 <a
                                     key={index}
-                                    href="#"
+                                    href={item.url}
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-white hover:opacity-80  font-[200]"
                                 >

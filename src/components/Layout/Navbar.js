@@ -8,17 +8,13 @@ const Navbar = () => {
     const [isTransparent, setIsTransparent] = useState(true);
     const location = useLocation(); // Get current route location
 
-    const handleScroll = () => {
-        if (location.pathname === "/") {
-            if (window.scrollY > 100) {
-                setIsTransparent(false);
-            } else {
-                setIsTransparent(true);
-            }
-        }
-    };
-
     useEffect(() => {
+        const handleScroll = () => {
+            if (location.pathname === "/") {
+                setIsTransparent(window.scrollY <= 100);
+            }
+        };
+
         // Set initial transparency state based on route
         setIsTransparent(location.pathname === "/");
 

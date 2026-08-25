@@ -1,4 +1,4 @@
-import { SCROLL_TO_HOTELS, RESET_SCROLL, SET_CURRENT_BOOKING_INFO, ADD_BOOKING_RESULT } from "../actionType/actionType";
+import { SCROLL_TO_HOTELS, RESET_SCROLL } from "../actionType/actionType";
 
 const initialState = {
     hotels: [],

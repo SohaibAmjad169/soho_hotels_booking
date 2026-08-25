@@ -17,7 +17,7 @@ export const fetchHotelById = (id) => async (dispatch) => {
     const data = await response.json();
 
     if (Array.isArray(data)) {      
-      const hotel = data.find(hotel => hotel.id == id);
+      const hotel = data.find(hotel => hotel.id === Number(id));
 
       if (hotel) {
         dispatch({

@@ -101,7 +101,6 @@ const Checkout = () => {
     useEffect(() => {
         if (step >= 1) {
             const bookingId = `ee34476d-a194-42f7-${hotel?.id}-d574b1915545`;
-            const discount = hotel?.discount;
             window.currentBookingInfo = {
                 bookingDetails: {
                     booking_id: bookingId,
@@ -133,7 +132,7 @@ const Checkout = () => {
             };
             dispatch(setCurrentBookingInfo(window.currentBookingInfo));
         }
-    }, [step, personalInfo, dates, hotel]);
+    }, [step, personalInfo, dates, hotel, dispatch]);
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -175,7 +174,6 @@ const Checkout = () => {
     };
 
     const handleSubmit = () => {
-        const discount = hotel?.price ? hotel.price * 0.35 : 0;
         const bookingId = `ee34476d-a194-42f7-${hotel?.id}-d574b1915545`;
 
         let storedBookingResults = JSON.parse(localStorage.getItem("bookingResults")) || [];
@@ -242,22 +240,6 @@ const Checkout = () => {
 
         setPersonalInfo(updatedPersonalInfo);
         localStorage.setItem("personalInfo", JSON.stringify(updatedPersonalInfo));
-    };
-
-
-    const handleDateChange = (e) => {
-        const { name, value } = e.target;
-        setDates((prevDates) => ({
-            ...prevDates,
-            [name]: value,
-        }));
-
-        // Update global variable
-        window.currentBookingInfo.bookingDetails = {
-            ...window.currentBookingInfo.bookingDetails,
-            [name]: formatDateString(value),
-        };
-        localStorage.setItem("currentBookingInfo", JSON.stringify(window.currentBookingInfo));
     };
 
 
